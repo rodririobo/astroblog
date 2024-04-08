@@ -5,7 +5,10 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	
+        site: "https://rodririobo.github.io",
+        base: "/blog",
+
 	integrations: [mdx(), sitemap()],
 	output: "hybrid",
 	adapter: node({
