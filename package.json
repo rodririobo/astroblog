@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "no",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,14 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/mdx": "^2.2.4",
-    "@astrojs/node": "^8.2.5",
-    "@astrojs/rss": "^4.0.5",
-    "@astrojs/sitemap": "^3.1.2",
-    "astro": "^4.5.16",
-    "build": "^0.1.4",
-    "pnpm": "^8.15.5",
+    "@astrojs/check": "^0.5.9",
+    "astro": "^4.5.9",
     "typescript": "^5.4.3"
   }
 }
