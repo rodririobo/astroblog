@@ -7,7 +7,7 @@ import node from "@astrojs/node";
 export default defineConfig({
 	
     site: "https://rodririobo.github.io",
-    base: "/blog",
+    base: ".",
 	integrations: [mdx(), sitemap()],
 	output: "hybrid",
 	adapter: node({
