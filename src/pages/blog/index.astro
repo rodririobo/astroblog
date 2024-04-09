@@ -10,15 +10,6 @@ import FormattedDate from '../../components/FormattedDate.astro';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
-const postsPerPage = 2; // Número de posts por página
-const url = new URL(import.meta.url);
-const searchParams = new URLSearchParams(url.search);
-const page = parseInt(searchParams.get('page') || '1');
-const start = (page - 1) * postsPerPage;
-const end = start + postsPerPage;
-const paginatedPosts = posts.slice(start, end);
-
 ---
 
 <!doctype html>
@@ -99,7 +90,7 @@ const paginatedPosts = posts.slice(start, end);
 			<section>
 				<ul>
 					{
-						paginatedPosts.map((post) => (
+						posts.map((post) => (
 							<li>
 								    <a href={`/astroblog/blog/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
@@ -112,13 +103,7 @@ const paginatedPosts = posts.slice(start, end);
 						))
 					}
 				</ul>
-				{/* Agregar controles de paginación */}
-				<nav>
-					{page > 1 && <a href={`?page=${page - 1}`}>Anterior</a>}
-					{posts.length > end && <a href={`?page=${page + 1}`}>Siguiente</a>}
-				</nav>
-			</section>
-		</main>
+				
 		<Footer />
 	</body>
 </html>
