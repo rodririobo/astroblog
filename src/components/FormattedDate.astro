@@ -1,11 +1,12 @@
 ---
 interface Props {
 	date: Date;
+	author?:string;
 }
 
-const { date } = Astro.props;
+const { date, author } = Astro.props;
 ---
-
+<span>{author}</span>
 <time datetime={date.toISOString()}>
 	{
 		date.toLocaleDateString('es-es', {
