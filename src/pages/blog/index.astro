@@ -10,7 +10,7 @@ import { Image } from 'astro:assets';
 export const prerender = false;
 
 // Número de posts por página
-const postsPerPage = 3;
+const postsPerPage = 5;
 
 // Carga y ordena los posts por fecha de publicación
 const allPosts = (await getCollection('blog')).sort(
@@ -95,6 +95,19 @@ const prevPage = currentPage > 1 ? currentPage - 1: null;
 				box-shadow: var(--box-shadow);
 			}
 
+			nav { 
+				    padding-top: 2rem;
+					text-align: center;
+					& a {
+						
+						text-decoration: none;
+						border: 2px solid blue;
+						padding: 3px;
+						border-radius: 5px;
+						
+					}
+				}
+
 			@media (max-width: 720px) {
 				ul {
 					gap: 0.5em;
@@ -109,7 +122,9 @@ const prevPage = currentPage > 1 ? currentPage - 1: null;
 				ul li:first-child .title {
 					font-size: 1.563em;
 				}
+				
 			}
+
 		</style>
 	
     </head>
