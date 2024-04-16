@@ -6,18 +6,46 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import { Image } from 'astro:assets';
-//Ordena los post por fecha publicacion
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+
+export const prerender = false;
+
+// Número de posts por página
+const postsPerPage = 3;
+
+// Carga y ordena los posts por fecha de publicación
+const allPosts = (await getCollection('blog')).sort(
+    (a : any, b: any) => b.data.pubDate - a.data.pubDate
 );
 
+// Función para obtener los posts de la página actual
+
+function getPostsForPage(pageNumber: number) {
+    const startIndex = (pageNumber - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+	return allPosts.slice(startIndex, endIndex);
+
+}
+
+// Función para calcular el número total de páginas
+function getTotalPages() {
+    return Math.ceil(allPosts.length / postsPerPage);
+}
+
+const pag = Astro.url.searchParams.get('page');// Página actual de la URL
+const currentPage = pag ? parseInt(pag) : 0;
+const totalPages = getTotalPages();
+const posts = getPostsForPage(currentPage);
+const nextPage = currentPage < totalPages ? currentPage + 1: null;
+const prevPage = currentPage > 1 ? currentPage - 1: null;
+
+console.log(currentPage)
 
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			ul {
 				display: flex;
@@ -85,37 +113,61 @@ const posts = (await getCollection('blog')).sort(
 				}
 			}
 		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
+	
+    </head>
+    <body>
+        <Header />
+        <main>
+            <section>
+                <ul>
+                    {
+					
 						posts.map((post) => (
-							<li>
-								    <a href={`/astroblog/blog/${post.slug}/`}>
+                        <li>
+                            <a href={`/astroblog/blog/${post.slug}/`}>
 									<Image
 
-									src={post.data.heroImage || ''}
+										src={post.data.heroImage || ''}
 										loading="lazy"
 										width="720"
 										height="360"
 										alt=""
 
-										/>
+									/>
 
 										<h4 class="title">{post.data.title}</h4>
 										<p class="date">
-										<FormattedDate date={post.data.pubDate} author={post.data.author}/>
+									<FormattedDate date={post.data.pubDate} author={post.data.author}/>
 									</p>
 								</a>
-							</li>
-						))
+                        </li>
+                    ))
+					
 					}
-				</ul>
-				</section>
-		<Footer />
-		</main>
-	</body>
+                </ul>
+            </section>
+			
+                {/* Controles de paginación */}
+                <nav>
+					
+                        {prevPage && (
+							
+                                <a href={`?page=${prevPage}`}>
+                                    Anterior
+                                </a>
+                        
+                        )}
+                        {nextPage && (
+							
+                                <a href={`?page=${nextPage}`}>
+                                    Siguiente
+                                </a>
+								
+                        )}
+
+                </nav>
+            
+        </main>
+        <Footer />
+    </body>
 </html>
