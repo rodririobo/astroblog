@@ -104,7 +104,8 @@ const prevPage = currentPage > 1 ? currentPage - 1: null;
 						border: 2px solid blue;
 						padding: 3px;
 						border-radius: 5px;
-						
+						margin-left: 1rem;
+						margin-right: 1rem;						
 					}
 				}
 
@@ -164,18 +165,23 @@ const prevPage = currentPage > 1 ? currentPage - 1: null;
                 <nav>
 					
                         {prevPage && (
-							
+
+								<a href={`?page=${1}`}>
+                                    Primera Página
+                                </a>
                                 <a href={`?page=${prevPage}`}>
-                                    Anterior
+                                    Página Anterior
                                 </a>
                         
                         )}
                         {nextPage && (
 							
                                 <a href={`?page=${nextPage}`}>
-                                    Siguiente
+                                    Página Siguiente
                                 </a>
-								
+								<a href={`?page=${totalPages}`}>
+                                    Ultimo Página
+                                </a>							
                         )}
 
                 </nav>
