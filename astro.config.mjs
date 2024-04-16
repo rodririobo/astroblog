@@ -5,14 +5,17 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-
-	
 	
     site: "https://rodririobo.github.io",
-    base: "/astroblog",
+
+	base: "/astroblog",
+
 	integrations: [mdx(), sitemap()],
+
 	output: "hybrid",
+
 	adapter: node({
 		mode: "standalone"
 	})
+
 });
