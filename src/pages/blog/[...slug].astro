@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
+import HeaderLink from '../../components/HeaderLink.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -10,12 +11,41 @@ export async function getStaticPaths() {
 	}));
 
 }
+
 type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+
 ---
 
 <BlogPost {...post.data}>
 	<Content />
+    <nav>
+		<button onclick="window.history.back()">Volver</button>
+	</nav>
 </BlogPost>
+
+<style>
+nav { 
+
+	display:flex;
+	justify-content: center;
+	& button {
+
+		
+		padding: 6px;
+		background-color: transparent;
+		width: 7rem;
+		text-align: center;
+		color:blue;
+		border-color: blue;
+		border-radius: 8px;
+		font-size: 20px;
+
+
+		}
+}
+
+</style>
