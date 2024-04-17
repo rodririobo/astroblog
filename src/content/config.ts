@@ -13,14 +13,10 @@ const blog = defineCollection({
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       // Assuming heroImage is a relative URL, prepend it with the baseUrl
-      heroImage: z.string().optional().refine((value) => {
-        // If heroImage is provided and it starts with the expected prefix
-		console.log("Entrando en la función refine");
-        if (value && value.startsWith(baseUrl)) {
-          return true; // Return true if it meets the validation criteria
-        }
-        return false; // Otherwise, return false
-      }, { message: 'Hero image URL must start with the base URL.' }),
+      heroImage: z.string().optional().transform(value => {
+        // Concatenar la baseUrl con la ruta relativa de la imagen si heroImage está definida
+        return value ? baseUrl + value : undefined;
+      }),
     });
   },
 });
