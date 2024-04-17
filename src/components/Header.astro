@@ -3,9 +3,6 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 const baseUrl = import.meta.env.BASE_URL;
 
-const blog=baseUrl+"/blog?page=1";
-const about=baseUrl+"/about";
-
 ---
 
 <header>
@@ -13,8 +10,8 @@ const about=baseUrl+"/about";
 		<h2><a href={baseUrl}>{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink href={baseUrl}>Inicio</HeaderLink>
-			<HeaderLink href={blog}>Blog</HeaderLink>
-			<HeaderLink href={about}>Sobre</HeaderLink>
+			<HeaderLink href=`${baseUrl}/blog?page=1`>Blog</HeaderLink>
+			<HeaderLink href=`${baseUrl}/about`>Sobre</HeaderLink>
 			
 		</div>
 		<div class="social-links">
