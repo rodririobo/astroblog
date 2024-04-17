@@ -15,20 +15,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = baseUrl+'/blog-placeholder-1.jpg' } = Astro.props;
 
-const atkinson_regular="/fonts/atkinson-regular.woff";
-const atkinson_bold="/fonts/atkinson-bold.woff";
-const favicon=baseUrl+"/favicon.svg"; 
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href={favicon}/>
+<link rel="icon" type="image/svg+xml" href=`${baseUrl}/favicon.svg`/>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link  href={atkinson_regular} as="font" type="font/woff" crossorigin />
-<link  href={atkinson_bold} as="font" type="font/woff" crossorigin />
+<link  href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
+<link  href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
