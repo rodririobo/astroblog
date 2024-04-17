@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 const baseUrl = import.meta.env.BASE_URL;
-console.log(baseUrl)
+
 ---
 
 <Layout
 	title="About Me"
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
-	heroImage="/astroblog/blog-placeholder-about.jpg"
+	heroImage={baseUrl+"/blog-placeholder-about.jpg"}
 >
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
