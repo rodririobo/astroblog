@@ -16,6 +16,8 @@ export default defineConfig({
 
 	adapter: node({
 		mode: "development"
-	})
+	}),
+
+	assetPrefix: '/fonts',
 
 });
