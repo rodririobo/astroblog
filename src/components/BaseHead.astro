@@ -3,6 +3,8 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 interface Props {
 	title: string;
 	description: string;
@@ -11,7 +13,9 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/astroblog/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = baseUrl+'/blog-placeholder-1.jpg' } = Astro.props;
+
+console.log(image)
 ---
 
 <!-- Global Metadata -->
@@ -21,8 +25,8 @@ const { title, description, image = '/astroblog/blog-placeholder-1.jpg' } = Astr
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/astroblog/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/astroblog/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

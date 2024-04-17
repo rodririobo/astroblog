@@ -12,7 +12,7 @@ export default defineConfig({
 
 	integrations: [mdx(), sitemap()],
 
-	output: "server",
+	output: "hybrid",
 
 	adapter: node({
 		mode: "development"
