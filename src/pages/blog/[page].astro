@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { Image } from 'astro:assets';
 import FormattedDate from '../../components/FormattedDate.astro';
+import { url } from '../../../dist/server/chunks/markdown-style-guide_BQzX1Avx.mjs';
 
 const baseUrl = import.meta.env.BASE_URL;// Obtiene la Urlbase
 
@@ -16,12 +17,14 @@ export async function getStaticPaths({ paginate }) {
 
 });
   // Generate pages from our array of astronauts, with 2 to a page for testing
-  return paginate(pages, { pageSize: 3 });
+  return paginate(pages, { pageSize: 5 });
 }
 
 // Todos los datos paginados se pasan en la prop "page"
 
 const { page } = Astro.props;
+
+console.log(page.lastPage)
 
 ---
 
@@ -142,9 +145,15 @@ const { page } = Astro.props;
 							))
 					}
 				</ul>
-				
-			
-            </section>
+				<nav>
+					
+					{page.url.prev ?<a href={baseUrl+'/blog/1'}>Primera</a> : null}
+                    {page.url.prev ? <a href={baseUrl+page.url.prev}>Anterior</a> : null}
+                    {page.url.next ? <a href={baseUrl+page.url.next}>Siguiente</a> : null}
+					{page.url.next ?<a href={baseUrl+'/blog/'+page.lastPage}>Última</a> : null}
+					
+				</nav>
+			    </section>
         
         </main>
         <Footer />
