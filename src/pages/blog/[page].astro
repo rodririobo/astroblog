@@ -24,8 +24,6 @@ export async function getStaticPaths({ paginate }) {
 
 const { page } = Astro.props;
 
-console.log(page.lastPage)
-
 ---
 
 <!doctype html>
@@ -120,7 +118,8 @@ console.log(page.lastPage)
     <body>
         <Header />
         <main>
-            <section>
+            <h2>Entradas Blog</h2>
+			<section>
 				
 				<ul>
 					{
@@ -146,7 +145,7 @@ console.log(page.lastPage)
 					}
 				</ul>
 				<nav>
-					
+
 					{page.url.prev ?<a href={baseUrl+'/blog/1'}>Primera</a> : null}
                     {page.url.prev ? <a href={baseUrl+page.url.prev}>Anterior</a> : null}
                     {page.url.next ? <a href={baseUrl+page.url.next}>Siguiente</a> : null}
