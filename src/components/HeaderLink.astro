@@ -1,4 +1,5 @@
 ---
+
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'>;
@@ -14,11 +15,8 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '') || hr
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-	
 	<slot />
-	<p>{pathname}</p>
 </a>
-
 <style>
 	a {
 		display: inline-block;
