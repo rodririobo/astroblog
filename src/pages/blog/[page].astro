@@ -9,19 +9,50 @@ import FormattedDate from '../../components/FormattedDate.astro';
 
 const baseUrl = import.meta.env.BASE_URL;// Obtiene la Urlbase
 
-export async function getStaticPaths({ paginate }) {
-  const pages = await getCollection('blog', ({ data, slug }) => {
-  return {data, slug};
+interface Pages {
+url: any;
+lastPage: string;
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  data: {
+map(arg0: ({ data, slug }: { data: BlogEntry; slug: string; }) => any): unknown;
+    title: string;
+    description: string;
+    pubDate: Date;
+    author?: string;
+    updatedDate?: Date;
+    heroImage?: string;
+  };
+}
 
-
-});
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const pages: Pages[] = await getCollection('blog', ({ data, slug }) => {
+    return { data, slug };
+  });
   // Generate pages from our array of astronauts, with 2 to a page for testing
   return paginate(pages, { pageSize: 5 });
 }
 
 // Todos los datos paginados se pasan en la prop "page"
 
-const { page } = Astro.props;
+const { page } = Astro.props as { page: Pages };
+
+// Define el tipo BlogEntry
+interface BlogEntry {
+
+    title: string;
+    description: string;
+    pubDate: Date;
+    author?: string;
+    updatedDate?: Date;
+    heroImage?: string;
+
+}
+
+// Actualiza la interfaz Page para usar BlogEntry
+
 
 ---
 
@@ -122,7 +153,8 @@ const { page } = Astro.props;
 				
 				<ul>
 					{
-							page.data.map(({ data , slug  }) => (
+							page.data.map(({ data, slug }: { data : BlogEntry, slug: string }) => (
+							
 								<li>
 									<a href={`${baseUrl}/blog/${slug}/`}>
 										<Image

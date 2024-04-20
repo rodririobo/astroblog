@@ -4,7 +4,7 @@ const blog = defineCollection({
   type: 'content',
   // Type-check frontmatter using a schema function
   schema: () => {
-    const baseUrl = import.meta.env.BASE_URL;
+    const baseUrl : string = import.meta.env.BASE_URL;
 
     return z.object({
       title: z.string(),
