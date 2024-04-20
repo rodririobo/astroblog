@@ -14,8 +14,11 @@ const isActive = href === pathname || href==='/'+ subpath || href===pathname+'/1
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
+	
 	<slot />
+	<p>{pathname}</p>
 </a>
+
 <style>
 	a {
 		display: inline-block;
