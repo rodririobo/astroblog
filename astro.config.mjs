@@ -10,7 +10,7 @@ export default defineConfig({
 	
     site: "https://rodririobo.github.io",
 
-	base: "/astroblog",
+	base: ".",
 
 	integrations: [mdx(), sitemap()],
 
