@@ -6,7 +6,6 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { Image } from 'astro:assets';
 import FormattedDate from '../../components/FormattedDate.astro';
-import { url } from '../../../dist/server/chunks/markdown-style-guide_BQzX1Avx.mjs';
 
 const baseUrl = import.meta.env.BASE_URL;// Obtiene la Urlbase
 
@@ -123,7 +122,7 @@ const { page } = Astro.props;
 				
 				<ul>
 					{
-							page.data.map(({data, slug}) => (
+							page.data.map(({ data , slug  }) => (
 								<li>
 									<a href={`${baseUrl}/blog/${slug}/`}>
 										<Image
@@ -146,10 +145,10 @@ const { page } = Astro.props;
 				</ul>
 				<nav>
 
-					{page.url.prev ?<a href={baseUrl+'/blog/1'}>Primera</a> : null}
+					{page.url.prev ? <a href={baseUrl+'/blog/1'}>Primera</a> : null}
                     {page.url.prev ? <a href={baseUrl+page.url.prev}>Anterior</a> : null}
                     {page.url.next ? <a href={baseUrl+page.url.next}>Siguiente</a> : null}
-					{page.url.next ?<a href={baseUrl+'/blog/'+page.lastPage}>Última</a> : null}
+					{page.url.next ? <a href={baseUrl+'/blog/'+page.lastPage}>Última</a> : null}
 					
 				</nav>
 			    </section>
