@@ -17,7 +17,7 @@ lastPage: string;
   body: string;
   collection: string;
   data: {
-map(arg0: ({ data, slug }: { data: BlogEntry; slug: string; }) => any): unknown;
+    map(arg0: ({ data, slug }: { data: BlogEntry; slug: string; }) => any): unknown;
     title: string;
     description: string;
     pubDate: Date;
@@ -28,8 +28,8 @@ map(arg0: ({ data, slug }: { data: BlogEntry; slug: string; }) => any): unknown;
 }
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const pages: Pages[] = await getCollection('blog', ({ data, slug }) => {
-    return { data, slug };
+  const pages  = await getCollection('blog', () => {
+	return { id: '', slug: '', body: '', collection: '', data: { title: '', description: '', pubDate: new Date(), author:'', updatedDate: new Date(), heroImage:'' } };
   });
   // Generate pages from our array of astronauts, with 2 to a page for testing
   return paginate(pages, { pageSize: 5 });
