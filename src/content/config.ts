@@ -5,7 +5,7 @@ const blog = defineCollection({
   // Type-check frontmatter using a schema function
   schema: () => {
     var baseUrl : string = import.meta.env.BASE_URL;
-      if(baseUrl==='/') {baseUrl=''}
+//      if(baseUrl==='/') {baseUrl=''}
     return z.object({
       title: z.string(),
       description: z.string(),
