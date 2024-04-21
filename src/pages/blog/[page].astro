@@ -158,7 +158,7 @@ interface BlogEntry {
 									<a href={`${baseUrl}/blog/${slug}/`}>
 										<Image
 	
-											src={data.heroImage || ''}
+											src={baseUrl+data.heroImage || ''}
 											loading="lazy"
 											width="720"
 											height="360"

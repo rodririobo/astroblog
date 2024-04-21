@@ -1,14 +1,13 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-var baseUrl : string = import.meta.env.BASE_URL;
-if (baseUrl==='/'){baseUrl=''}
+var baseUrl : string = import.meta.env.BASE_URL;// Obtiene la Urlbase
 ---
 
 <Layout
 	title="Sobre Mí"
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
-	heroImage={baseUrl+"/blog-placeholder-about.jpg"}
+	heroImage={"/blog-placeholder-about.jpg"}
 >
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
