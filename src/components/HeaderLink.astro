@@ -1,6 +1,7 @@
 ---
-
 import type { HTMLAttributes } from 'astro/types';
+
+import { Debug } from 'astro:components';
 
 type Props = HTMLAttributes<'a'>;
 
@@ -10,14 +11,23 @@ const { pathname } = Astro.url;
 
 const subpath = pathname.match(/[^\/.]+/g);
 
-const isActive = href===pathname +'/' || href==='/'+ subpath?.[0]+ '/1'
+const isActive = href===pathname || href==='/'+ subpath?.[0]+ '/1';
 
-console.log({href},{pathname});
+const serverObject = {
+
+href,
+
+pathname,
+
+}
+
 ---
-
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
+
+<Debug {serverObject} />
+
 <style>
 	a {
 		display: inline-block;
