@@ -9,14 +9,20 @@ const { pathname } = Astro.url;
 
 const subpath = pathname.match(/[^\/.]+/g);
 
-const baseUrl : string = import.meta.env.BASE_URL;
+var baseUrl : string = import.meta.env.BASE_URL;
+if (baseUrl==='/') {baseUrl=''}
 
 var isActive: boolean=false;
 
 if (baseUrl==='/astroblog') {
-
 	isActive = href===pathname || href==='/'+ subpath?.[0]+ '/1' || href===pathname+'/';
+}else{
+
+	isActive = href===pathname || href==='/'+ subpath?.[0];
+
 }
+
+
 ---
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />

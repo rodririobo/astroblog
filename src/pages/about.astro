@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-const baseUrl : string = import.meta.env.BASE_URL;
-
+var baseUrl : string = import.meta.env.BASE_URL;
+if (baseUrl==='/'){baseUrl=''}
 ---
 
 <Layout
