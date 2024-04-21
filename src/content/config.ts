@@ -11,6 +11,7 @@ const blog = defineCollection({
       description: z.string(),
       author: z.string().optional(),
       pubDate: z.coerce.date(),
+      category: z.string().optional(),
       updatedDate: z.coerce.date().optional(),
       // Assuming heroImage is a relative URL, prepend it with the baseUrl
       heroImage: z.string().optional().transform(value => {

@@ -25,12 +25,13 @@ lastPage: string;
     author?: string;
     updatedDate?: Date;
     heroImage?: string;
+	category?:string;
   };
 }
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const pages  = await getCollection('blog', () => {
-	return { id: '', slug: '', body: '', collection: '', data: { title: '', description: '', pubDate: new Date(), author:'', updatedDate: new Date(), heroImage:'' } };
+	return { id: '', slug: '', body: '', collection: '', data: { title: '', description: '', pubDate: new Date(), author:'', updatedDate: new Date(), heroImage:'', category:'' } };
   });
   // Generate pages from our array of astronauts, with 2 to a page for testing
   return paginate(pages, { pageSize: 5 });
@@ -49,6 +50,7 @@ interface BlogEntry {
     author?: string;
     updatedDate?: Date;
     heroImage?: string;
+	category?:string;
 
 }
 
@@ -164,7 +166,7 @@ interface BlogEntry {
 											alt=""
 	
 										/>
-										<h4 class="title">{data.title}</h4>
+										<h4 class="title">{data.title}</h4><span>{data.category}</span>
 										<p class="date">
 											<FormattedDate date={data.pubDate} />
 										</p>
