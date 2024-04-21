@@ -148,9 +148,8 @@ interface BlogEntry {
     <body>
         <Header />
         <main>
-            <h2>Entradas Blog</h2>
+            
 			<section>
-				
 				<ul>
 					{
 							page.data.map(({ data, slug }: { data : BlogEntry, slug: string }) => (
@@ -166,7 +165,8 @@ interface BlogEntry {
 											alt=""
 	
 										/>
-										<h4 class="title">{data.title}</h4><span>{data.category}</span>
+										<h4 class="title">{data.title}</h4>
+										<h5>{data.category}</h5>
 										<p class="date">
 											<FormattedDate date={data.pubDate} />
 										</p>
@@ -183,8 +183,11 @@ interface BlogEntry {
 					{page.url.next ? <a href={baseUrl+'/blog/'+page.lastPage}>Última</a> : null}
 					
 				</nav>
-			    </section>
-        
+		    </section>
+			<aside>
+				<h3>Categorías</h3>
+			</aside>
+			
         </main>
         <Footer />
     </body>

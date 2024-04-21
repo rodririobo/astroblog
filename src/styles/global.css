@@ -5,7 +5,9 @@
  */
 
 :root {
-	
+
+	--widthblog:1440px;
+	--widthprose:1300px;
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
@@ -44,10 +46,15 @@ body {
 	line-height: 1.7;
 }
 main {
-	width: 1400px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 3rem;
+	min-height: 100vh;
+	width: var(--widthblog);/* Ancho del blog */
 	max-width: calc(100% - 2em);
-	margin: auto;
 	padding: 3em 1em;
+	margin: auto;
 }
 h1,
 h2,

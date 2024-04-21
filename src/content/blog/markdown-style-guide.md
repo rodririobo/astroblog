@@ -81,9 +81,9 @@ The blockquote element represents content that is quoted from another source, op
 
 [^1]: The above quote is excerpted from Rob Pike's [Video talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 [^2]: Esto es una prueba.
-## Tables
+## Tablas
 
-#### Syntax
+#### Sintaxis
 
 ```markdown
 | Italics   | Bold     | Code   |
@@ -91,22 +91,22 @@ The blockquote element represents content that is quoted from another source, op
 | _italics_ | **bold** | `code` |
 ```
 
-#### Output
+#### Salida
 
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
-## Code Blocks
+## Bloque de código
 
-#### Syntax
+#### Sintaxis
 
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntac, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+Podemos usar 3 comillas invertidas ``` en una nueva línea y escribir un fragmento y cerrar con 3 comillas invertidas en una nueva línea y para resaltar la sintaxis específica del idioma, escribir una palabra del nombre del idioma después de las primeras 3 comillas invertidas, por ejemplo. html, javascript, css, rebajas, mecanografiado, txt, bash
 
 ````markdown
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <title>Example HTML5 Document</title>
@@ -118,11 +118,11 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 ```
 ````
 
-Output
+#### Salida
 
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <title>Example HTML5 Document</title>
@@ -133,16 +133,16 @@ Output
 </html>
 ```
 
-## List Types
+## Tipos de listas
 
-### Ordered List
+### Lista Ortdenada
 
-#### Syntax
+#### Sintaxis
 
 ```markdown
-1. First item
-2. Second item
-3. Third item
+1. Primer elemento
+2. Segundo elemento
+3. tercer elemento
 ```
 
 #### Output

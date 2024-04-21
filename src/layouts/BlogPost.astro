@@ -17,21 +17,26 @@ const { title, description, pubDate, updatedDate, heroImage, author, category } 
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
+
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: 0;
 			}
 			.hero-image {
+
 				width: 100%;
+			
 			}
 			.hero-image img {
+
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				
 			}
 			.prose {
-				width: 1300px;
+				width: var(--widthprose); /* Ancho parte inferior, imagen cabecera entrada */
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
@@ -75,7 +80,7 @@ const { title, description, pubDate, updatedDate, heroImage, author, category } 
 
 						src={heroImage || ''}
 							loading="lazy"
-							width="1400"
+							width="1300"
 							height="510"
 							alt=""
 
