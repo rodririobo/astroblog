@@ -24,7 +24,7 @@ category: 'Consola Linux'
 
 ```
 
-#### — <cite>[^1]1. El primer carácter indica el tipo de archivo:</cite>
+#### <cite>[^1]. El primer carácter indica el tipo de archivo:</cite>
 
     -: Archivo regular.
     d: Directorio.
@@ -32,7 +32,7 @@ category: 'Consola Linux'
     c: Dispositivo de caracteres.
     b: Dispositivo de bloques, como un disco duro.
 
-#### — <cite>[^2]2. Los siguientes nueve caracteres representan los permisos:</cite>
+#### <cite>[^2]. Los siguientes nueve caracteres representan los permisos:</cite>
 
     Los primeros tres caracteres son para el propietario (usuario).
     Los siguientes tres caracteres son para el grupo.
@@ -47,7 +47,7 @@ category: 'Consola Linux'
         -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, grupo sólo lectura, 
         y otros sólo lectura.
 
-#### <cite>[^3]3. Enlaces duros:</cite>
+#### <cite>[^3]. Enlaces duros:</cite>
     
     En Linux, un enlace duro es una referencia adicional a un archivo o directorio existente. 
     
@@ -62,7 +62,7 @@ category: 'Consola Linux'
 
     Los enlaces duros no tienen un propietario o permisos independientes; heredan los permisos del archivo original.
 
-#### <cite>[^4]4. Número de enlaces duros:<cite>
+#### <cite>[^4]. Número de enlaces duros<cite>
     
         El número que ves antes del nombre del propietario en la descripción de permisos,
     es el contador de enlaces duros.
@@ -72,7 +72,7 @@ category: 'Consola Linux'
      
     Si muestra un número mayor, hay varios enlaces duros apuntando al mismo contenido.
 
-#### <cite>[^5]5. Esquema (para mejor comprensión):<cite>
+#### <cite>[^5]. Esquema (para mejor comprensión):<cite>
 
 ![Esquema](/astroblog/svg/ls.svg)
 

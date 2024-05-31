@@ -155,13 +155,25 @@ ol  {
 	& li p  {
 
 
-		color: #254d2f;
+		color: #68036b;
 		font-style: italic;	
 		font-size: 1.5rem;
 	}
 	
 }
+sup {
+     display: inline;
+	 float: left;
 
+	 
+
+	& a {
+
+		font-style: normal;
+		font-size:2rem;
+	
+	}
+}
 
 @media (max-width: 720px) {
 	body {
