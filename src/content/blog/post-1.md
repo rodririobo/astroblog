@@ -1,13 +1,13 @@
 ---
-title: 'Consola Linux'
+title: 'Comando ls'
 description: 'Kali Linux'
 pubDate: '5 30 2024'
 heroImage: '/svg/kali_linux.svg'
-category: 'Sistemas Linux'
+category: 'Consola Linux'
 
 ---
 
-#### Listar archivos y directorios (entendiendo los permisos)
+#### Listar archivos y directorios
 
 ```bash
 
@@ -15,7 +15,7 @@ category: 'Sistemas Linux'
     └─$ ls -lha
 
 ```
-##### Salida:
+#### Salida:
 
 ```python
 
@@ -23,7 +23,7 @@ category: 'Sistemas Linux'
     drwxr-xr-x  3 user user 4.0K May 29 15:53 Downloads
 
 ```
-**1. El primer carácter indica el tipo de archivo:**
+#### 1. El primer carácter indica el tipo de archivo:
 
     -: Archivo regular.
     d: Directorio.
@@ -31,7 +31,7 @@ category: 'Sistemas Linux'
     c: Dispositivo de caracteres.
     b: Dispositivo de bloques, como un disco duro.
 
-**2. Los siguientes nueve caracteres representan los permisos:**
+#### 2. Los siguientes nueve caracteres representan los permisos:
 
     Los primeros tres caracteres son para el propietario (usuario).
     Los siguientes tres caracteres son para el grupo.
@@ -43,10 +43,10 @@ category: 'Sistemas Linux'
     
     Por ejemplo:
 
-        -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura,
-        mientras que otros solo tienen permiso de lectura.
+        -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, grupo sólo lectura, 
+        y otros sólo lectura.
 
-**3. Enlaces duros:**
+#### 3. Enlaces duros:
     
     En Linux, un enlace duro es una referencia adicional a un archivo o directorio existente. 
     
@@ -61,7 +61,7 @@ category: 'Sistemas Linux'
 
     Los enlaces duros no tienen un propietario o permisos independientes; heredan los permisos del archivo original.
 
-**4. Número de enlaces duros:**
+#### 4. Número de enlaces duros:
     
         El número que ves antes del nombre del propietario en la descripción de permisos,
     es el contador de enlaces duros.
@@ -71,7 +71,7 @@ category: 'Sistemas Linux'
      
     Si muestra un número mayor, hay varios enlaces duros apuntando al mismo contenido.
 
-**5. Esquema (para mejor comprensión):**
+#### 5. Esquema (para mejor comprensión):
 
 ![Esquema](/astroblog/svg/ls.svg)
 
