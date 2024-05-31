@@ -145,6 +145,24 @@ hr {
 
 	border-top: 2px solid rgb(var(--gray-light));
 }
+
+ol  {
+				
+	display: flex;
+	gap:2rem;
+	justify-content: center;
+	
+	& li p  {
+
+
+		color: #254d2f;
+		font-style: italic;	
+		font-size: 1.5rem;
+	}
+	
+}
+
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;

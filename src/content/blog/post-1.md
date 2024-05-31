@@ -17,13 +17,14 @@ category: 'Consola Linux'
 ```
 #### Salida:
 
-```python
+```bash
 
     -rw-r--r--  1 user user 3.8K May 29 15:53 .zshrc
     drwxr-xr-x  3 user user 4.0K May 29 15:53 Downloads
 
 ```
-#### 1. El primer carácter indica el tipo de archivo:
+
+#### — <cite>[^1]1. El primer carácter indica el tipo de archivo:</cite>
 
     -: Archivo regular.
     d: Directorio.
@@ -31,7 +32,7 @@ category: 'Consola Linux'
     c: Dispositivo de caracteres.
     b: Dispositivo de bloques, como un disco duro.
 
-#### 2. Los siguientes nueve caracteres representan los permisos:
+#### — <cite>[^2]2. Los siguientes nueve caracteres representan los permisos:</cite>
 
     Los primeros tres caracteres son para el propietario (usuario).
     Los siguientes tres caracteres son para el grupo.
@@ -46,7 +47,7 @@ category: 'Consola Linux'
         -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, grupo sólo lectura, 
         y otros sólo lectura.
 
-#### 3. Enlaces duros:
+#### <cite>[^3]3. Enlaces duros:</cite>
     
     En Linux, un enlace duro es una referencia adicional a un archivo o directorio existente. 
     
@@ -61,7 +62,7 @@ category: 'Consola Linux'
 
     Los enlaces duros no tienen un propietario o permisos independientes; heredan los permisos del archivo original.
 
-#### 4. Número de enlaces duros:
+#### <cite>[^4]4. Número de enlaces duros:<cite>
     
         El número que ves antes del nombre del propietario en la descripción de permisos,
     es el contador de enlaces duros.
@@ -71,7 +72,14 @@ category: 'Consola Linux'
      
     Si muestra un número mayor, hay varios enlaces duros apuntando al mismo contenido.
 
-#### 5. Esquema (para mejor comprensión):
+#### <cite>[^5]5. Esquema (para mejor comprensión):<cite>
 
 ![Esquema](/astroblog/svg/ls.svg)
+
+
+ [^1]: Ir a primer punto.
+ [^2]: Ir al segundo punto. 
+ [^3]: Ir al tercer punto.
+ [^4]: Ir al cuarto punto.
+ [^5]: Ir al cuarto punto.
 
