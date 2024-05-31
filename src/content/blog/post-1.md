@@ -7,7 +7,7 @@ category: 'Consola Linux'
 
 ---
 
-#### Listar archivos y directorios
+#### Listar archivos y directorios:
 
 ```bash
 
@@ -62,7 +62,7 @@ category: 'Consola Linux'
 
     Los enlaces duros no tienen un propietario o permisos independientes; heredan los permisos del archivo original.
 
-#### <cite>[^4]. Número de enlaces duros<cite>
+#### <cite>[^4]. Número de enlaces duros:<cite>
     
         El número que ves antes del nombre del propietario en la descripción de permisos,
     es el contador de enlaces duros.
@@ -72,7 +72,7 @@ category: 'Consola Linux'
      
     Si muestra un número mayor, hay varios enlaces duros apuntando al mismo contenido.
 
-#### <cite>[^5]. Esquema (para mejor comprensión):<cite>
+#### <cite>[^5]. Esquema:<cite>
 
 ![Esquema](/astroblog/svg/ls.svg)
 
