@@ -1,6 +1,6 @@
 ---
-title: 'Comando (ls)'
-description: 'Comandos Linux'
+title: 'Consola Linux'
+description: 'Kali Linux'
 pubDate: '5 30 2024'
 heroImage: '/svg/kali_linux.svg'
 category: 'Sistemas Linux'
@@ -74,3 +74,4 @@ category: 'Sistemas Linux'
 **5. Esquema (para mejor comprensión):**
 
 ![Esquema](/astroblog/svg/ls.svg)
+
