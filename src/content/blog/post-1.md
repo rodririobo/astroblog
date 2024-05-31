@@ -28,12 +28,31 @@ heroImage: '/blog-placeholder-about.jpg'
     - Los primeros tres caracteres son para el propietario (usuario).
     - Los siguientes tres caracteres son para el grupo.
     - Los últimos tres caracteres son para otros usuarios.
-    Cada conjunto de tres caracteres representa los permisos de lectura ®, escritura (w) y ejecución (x), respectivamente. Si un permiso está presente, se muestra el carácter correspondiente; si no, se muestra un guion (-). Por ejemplo:
-    - -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, mientras que otros solo tienen permiso de lectura.
-3. El número antes del nombre del propietario es el número de enlaces al archivo o directorio.
-    - Luego vienen el nombre del propietario y el nombre del grupo.
-    - El número después del nombre del grupo es el tamaño del archivo en bytes.
-    - Finalmente, se muestra la fecha y hora de la última modificación.
-4. Esquema (Salida comando ls):
+    Cada conjunto de tres caracteres representa los permisos de lectura ®, escritura (w) y ejecución (x), respectivamente. Si un permiso está presente, se muestra el carácter correspondiente; si no, se muestra un guion (-). 
+    
+    - Por ejemplo:
+        - -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, mientras que otros solo tienen permiso de lectura.
+
+3. Enlaces duros:
+    
+    - En Linux, un enlace duro es una referencia adicional a un archivo o directorio existente. 
+    
+    - A diferencia de los enlaces simbólicos (que son como accesos directos), los enlaces duros apuntan directamente al mismo nodo en el sistema de archivos.
+
+    - Cuando creas un enlace duro a un archivo o directorio, estás creando una nueva entrada en el sistema de archivos que apunta al mismo contenido. Ambos enlaces (el original y el enlace duro) comparten el mismo contenido y ocupan el mismo espacio en disco.
+
+    - Los enlaces duros no tienen un propietario o permisos independientes; heredan los permisos del archivo original.
+
+    Número de enlaces duros:
+    
+    - El número que ves antes del nombre del propietario en la descripción de permisos es el contador de enlaces duros.
+    
+    - Indica cuántos enlaces duros están asociados con ese archivo o directorio específico.
+
+    - Si el contador muestra “1”, significa que solo hay un enlace (el original). 
+
+    - Si muestra un número mayor, hay varios enlaces duros apuntando al mismo contenido.
+
+4. Esquema (Mejor comprensión):
 
     ![Esquema](/astroblog/Esquema/ls.svg)
