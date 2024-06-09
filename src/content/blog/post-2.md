@@ -7,11 +7,11 @@ category: 'Consola Linux'
 
 ---
 
-#### Buscar archivos y directorios:
+#### <cite>[^1]. Buscar archivos y directorios:</cite>
 
 > El comando find es uno de los más potentes y versátiles en Linux, ya que permite buscar y manipular archivos y directorios de forma flexible y personalizable. A continuación, te presento una lista detallada de los diferentes opciones y operadores que sepueden utilizar con el comando find:
 
-#### Opciones de búsqueda:
+#### <cite>[^2]. Opciones de búsqueda:</cite>
 
 >- **-name:** Busca por el nombre exacto del archivo o directorio.
 >- **-iname:** Busca por el nombre exacto del archivo o directorio, ignorando mayúsculas y minúsculas.
@@ -27,7 +27,7 @@ category: 'Consola Linux'
 >- **-group:** Busca por el grupo del archivo o directorio.
 >- **-perm:** Busca por los permisos de acceso del archivo o directorio.
 
-#### Opciones de acción:
+#### <cite>[^3]. Opciones de acción:</cite>
 
 >- **-print:** Muestra la ruta del archivo o directorio encontrado.
 >- **-ls:** Muestra la lista de archivos y directorios encontrados en un formato similar a ls -l.
@@ -37,14 +37,14 @@ category: 'Consola Linux'
 >- **-mkdir:** Crea un directorio cuando se encuentra un archivo o directorio que coincide con los criterios de búsqueda.
 >- **-execdir:** Ejecuta un comando en el directorio padre cuando se encuentra un archivo o directorio que coincide con los criterios de búsqueda.
 
-#### Operadores:
+#### <cite>[^4]. Operadores:</cite>
 
 >- **! (not):** Negación, excluye los archivos y directorios que coinciden con los criterios de búsqueda.
 >- **() (groups):** Agrupa condiciones para ser evaluadas como una sola unidad.
 >- **&& (and):** Combinación lógica AND, ambos operandos deben ser verdaderos para que la condición sea verdadera.
 >- **|| (or):** Combinación lógica OR, al menos uno de los operandos debe ser verdadero para que la condición sea verdadera.
 
-#### Ejemplos:
+#### <cite>[^5]. Ejemplos:</cite>
 
 > Encontrar todos los archivos con extensión .txt en la carpeta actual:
 
@@ -81,3 +81,8 @@ find /tmp -empty -delete
 ```bash
 find . -name "*example*" -exec mkdir example \;
 ```
+[^1]: Buscar.
+[^2]: Opciones de Búsqueda. 
+[^3]: Opciones de acción.
+[^4]: Operadores.
+[^5]: Ejemplos.
