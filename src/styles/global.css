@@ -129,12 +129,26 @@ code {
 	border-radius: 2px;
 }
 pre {
+
+	display:block;
+	width: auto;
 	padding: 1.5em;
 	border-radius: 8px;
+	
 }
 pre > code {
+
 	all: unset;
+
+	& span {
+
+		display: inline-block;
+		text-wrap: wrap;
+	
+	}
+
 }
+
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;

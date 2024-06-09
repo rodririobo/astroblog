@@ -35,30 +35,26 @@ category: 'Consola Linux'
 #### <cite>[^2]. Los siguientes nueve caracteres representan los permisos:</cite>
 
     Los primeros tres caracteres son para el propietario (usuario).
+
     Los siguientes tres caracteres son para el grupo.
+
     Los últimos tres caracteres son para otros usuarios.
 
-    Cada conjunto de tres caracteres representa los permisos de lectura ®, 
-    escritura (w) y ejecución (x), respectivamente. Si un permiso está presente,
-    se muestra el carácter correspondiente; si no, se muestra un guion (-). 
-    
+    Cada conjunto de tres caracteres representa los permisos de lectura ®, escritura (w) y ejecución (x), respectivamente. Si un permiso está presente, se muestra el carácter correspondiente; si no, se muestra un guion (-).
+     
     Por ejemplo:
 
-        -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, grupo sólo lectura, 
-        y otros sólo lectura.
+        -rw-r--r-- significa que el propietario tiene permisos de lectura y escritura, grupo sólo lectura, y otros sólo lectura.
 
 #### <cite>[^3]. Enlaces duros:</cite>
     
     En Linux, un enlace duro es una referencia adicional a un archivo o directorio existente. 
     
-        A diferencia de los enlaces simbólicos (que son como accesos directos),
-    los enlaces duros apuntan directamente al mismo nodo en el sistema de archivos.
+        A diferencia de los enlaces simbólicos (que son como accesos directos), los enlaces duros apuntan directamente al mismo nodo en el sistema de archivos.
 
-        Cuando creas un enlace duro a un archivo o directorio, 
-    estás creando una nueva entrada en el sistema de archivos que apunta al mismo contenido.
+        Cuando creas un enlace duro a un archivo o directorio, estás creando una nueva entrada en el sistema de archivos que apunta al mismo contenido.
 
-        Ambos enlaces (el original y el enlace duro) comparten el mismo contenido
-    y ocupan el mismo espacio en disco.
+        Ambos enlaces (el original y el enlace duro) comparten el mismo contenido y ocupan el mismo espacio en disco.
 
     Los enlaces duros no tienen un propietario o permisos independientes; heredan los permisos del archivo original.
 
