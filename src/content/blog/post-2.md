@@ -82,7 +82,7 @@ find /tmp -empty -delete
 find . -name "*example*" -exec mkdir example \;
 ```
 [^1]: Buscar.
-[^2]: Opciones de Búsqueda. 
+[^2]: Opciones de búsqueda. 
 [^3]: Opciones de acción.
 [^4]: Operadores.
 [^5]: Ejemplos.
