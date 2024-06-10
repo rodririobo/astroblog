@@ -69,7 +69,7 @@ find . -perm 755 -size +1M
 > Encontrar todos los archivos en la carpeta /home/user y ejecutar un comando echo "Archivo encontrado" cuando se encuentre uno:
 
 ```bash
-find /home/user -exec echo "Archivo encontrado" \;
+find ~ -exec echo "Archivo encontrado" {} \;
 ```
 > Encontrar todos los archivos vacíos en la carpeta /tmp y borrarlos:
 
