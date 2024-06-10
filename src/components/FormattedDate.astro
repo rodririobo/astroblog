@@ -6,7 +6,7 @@ interface Props {
 
 const { date, author } = Astro.props;
 ---
-<span>{author}</span>
+
 <time datetime={date.toISOString()}>
 	{
 		date.toLocaleDateString('es-es', {
@@ -16,12 +16,12 @@ const { date, author } = Astro.props;
 		})
 	}
 </time>
+<h5>{author}</h5>
 <style>
-span
-	{
-		float: left;
-		margin-right: 5px;
-	
-	}
+
+h5 {
+
+	margin-top: 2%;
+}
 
 </style>
