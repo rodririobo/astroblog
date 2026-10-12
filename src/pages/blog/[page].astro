@@ -29,9 +29,8 @@ lastPage: string;
 }
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const pages  = await getCollection('blog', () => {
-	return { id: '', slug: '', body: '', collection: '', data: { title: '', description: '', pubDate: new Date(), author:'', updatedDate: new Date(), heroImage:'', category:'' } };
-  });
+
+const pages = await getCollection('blog');
   // Generate pages from our array of astronauts, with 2 to a page for testing
   return paginate(pages, { pageSize: 5 });
 }
@@ -152,10 +151,10 @@ interface BlogEntry {
 			<section>
 				<ul>
 					{
-							page.data.map(({ data, slug }: { data : BlogEntry, slug: string }) => (
+							page.data.map(({ data, id }: { data: BlogEntry, id: string }) => (
 							
 								<li>
-									<a href={`${baseUrl}/blog/${slug}/`}>
+									<a href={`${baseUrl}/blog/${id}/`}>
 										<Image
 	
 											src={data.heroImage || ''}
