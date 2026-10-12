@@ -14,6 +14,5 @@ export default defineConfig({
 
 	integrations: [mdx(), sitemap()],
 
-	assetPrefix: '/fonts',
 
 });
